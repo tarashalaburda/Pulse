@@ -1,0 +1,41 @@
+.reviews {
+  min-height: 950px;
+  padding-bottom: 70px;
+
+  &__content {
+    margin-top: 100px;
+    display: flex;
+    &:nth-child(2) {
+      margin-top: 70px;
+    }
+  }
+
+  &__img {
+    width: 169px;
+    height: 169px;
+    background-color: #0d0d0d;
+    border-radius: 84.5px;
+    margin-right: 60px;
+  }
+
+  &__box {
+    max-width: 656px;
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin-bottom: 10px;
+    }
+    &-count {
+      font-size: 14px;
+      font-weight: 300;
+      color: #646464;
+      margin-bottom: 20px;
+    }
+    &-text {
+      font-size: 16px;
+      font-weight: 300;
+      color: #0d0d0d;
+    }
+  }
+}
