@@ -73,4 +73,37 @@ $(document).ready(function () {
       $(".overlay, #order").fadeIn("slow"); // command showing the modal window
     })
   });
+
+
+  function validateForms(form) {
+    $(form).validate({
+      rules: {
+        name: {
+          required: true,
+          minlength: 2
+        },
+        phone: "required",
+        email: {
+          required: true,
+          email: true
+        }
+
+      },
+      messages: {
+        name: {
+          required: "Будь ласка, введіть своє ім'я",
+          minlength: jQuery.validator.format("Потрібно щонайменше {0} символи!")
+        },
+        phone: "Будь ласка, введіть свій номер телефону",
+        email: {
+          required: "Нам потрібна ваша електронна адреса, щоб зв'язатися з вами",
+          email: "Ваша електронна адреса повинна бути у форматі name@domain.com"
+        }
+      }
+    });
+  };
+  validateForms("#consultation-form");
+  validateForms("#consultation form");
+  validateForms("#order form");
 });
+
