@@ -40,8 +40,10 @@
     border-radius: 50%;
     border: 2px solid #ffffff;
     margin: 0 15px;
-    &:hover {
-      border: 3px solid #e32636;
+    @media (min-width: 960px) {
+      &:hover {
+        border: 3px solid #e32636;
+      }
     }
     img {
       height: 27px;
