@@ -9,9 +9,11 @@ Used:
 - Gulp
 - BEM
 - jQuery:
-    Slick Slider Plugin
-    jQuery Validation Plugin
-    Masked Input Plugin
+-Slick Slider Plugin
+-jQuery Validation Plugin
+-Masked Input Plugin
+
+
 -Wow.js
 -Animate.css
 -PHPMailer
