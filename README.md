@@ -14,9 +14,9 @@ Used:
 -Masked Input Plugin
 
 
--Wow.js
--Animate.css
--PHPMailer
+- Wow.js
+- Animate.css
+- PHPMailer
 
 Responsive and Adaptive
 Cross-Browser
