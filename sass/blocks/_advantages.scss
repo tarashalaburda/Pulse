@@ -34,4 +34,10 @@
       color: #ff0000;
     }
   }
+  &__item-animated {
+    animation: heartbeat 1.5s ease infinite;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
 }

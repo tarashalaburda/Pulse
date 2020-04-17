@@ -5,12 +5,23 @@ $(document).ready(function () {
     nextArrow: '<button type="button" class="slick-next"><img src="icons/right.svg"></button>', // ../ Delete -> in order to run the script without a server.
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 900,
         settings: {
           dots: true,
-          arrows: false
+          arrows: false,
+          variableWidth: false
         }
+      },
+      {
+        breakpoint: 420,
+        settings: {
+          dots: false,
+          arrows: false,
+          variableWidth: false
+        }
+
       }
+
     ]
   });
 
@@ -49,7 +60,7 @@ $(document).ready(function () {
       $(this).on("click", function (e) {
         e.preventDefault();
         $(".catalog-item__content").eq(i).toggleClass("catalog-item__content--active");
-        $(".catalog-item__list").eq(i).toggleClass("catalog-item__list--active");
+        $(".catalog-item__card").eq(i).toggleClass("catalog-item__card--active");
       });
     });
   }
@@ -107,5 +118,40 @@ $(document).ready(function () {
   validateForms("#order form");
 
   $("input[name=phone]").mask("+38(999) 999-9999");
+
+  $("form").submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "mailer/smart.php",
+      data: $(this).serialize()
+    }).done(function () {
+      $(this).find("input").val("");
+      $("#consultation, #order").fadeOut();
+      $(".overlay, #thanks").fadeIn("slow");
+
+      $("form").trigger("reset");
+    });
+    return false;
+  });
+
+  // Smooth scroll and page up
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1600) {
+      $(".pageup").fadeIn();
+    } else {
+      $(".pageup").fadeOut();
+    }
+  });
+
+  $("a[href=#up]").click(function () {
+    const _href = $(this).attr("href");
+    $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+    return false;
+  });
+
+  new WOW().init();
+
 });
 

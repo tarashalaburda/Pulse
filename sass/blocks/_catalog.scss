@@ -122,20 +122,25 @@
         margin-right: 20px;
       }
     }
-    &__list {
+    &__card {
       position: relative;
       width: 50%;
       margin-left: 0px;
       transform: translateX(0%);
-      padding-right: 20px;
+
       transition: 0.5s all;
-      padding-left: 19px;
-      margin-bottom: 0;
-      list-style-type: none;
+
       &--active {
         transform: translateX(-100%);
         // margin-left: 20px;
       }
+    }
+
+    &__list {
+      padding-right: 20px;
+      padding-left: 19px;
+      margin-bottom: 0;
+      list-style-type: none;
       li {
         position: relative;
         font-size: 14px;
